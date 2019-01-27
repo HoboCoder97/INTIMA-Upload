@@ -1,7 +1,42 @@
 <?php
 include ("auth.php");
+ //  display  file  upload  form
 
-?>
+if  (!isset($_POST['submit']))  { ?>
+
+
+<?php
+
+}  else  {
+
+//  check  uploaded  file  size
+
+if  ($_FILES['data']['size']  ==  0)  {
+
+die("ERROR:  Zero  byte  file  upload");
+
+}
+
+//  check  if  file  type  is  allowed  (optional)
+
+$allowedFileTypes  =  array("application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+
+if  (!in_array($_FILES['data']['type'],  $allowedFileTypes)) {
+
+die("ERROR:  File  type  not  permitted");
+
+} //  check  if  this  is  a  valid  upload
+
+if  (!is_uploaded_file($_FILES['data']['tmp_name']))   {
+
+die("ERROR:  Not  a  valid  file  upload"); } //  set  the  name  of  the  target  directory
+
+$uploadDir  =  "./uploads/incomplete/"; //  copy  the  uploaded  file  to  the  directory
+
+move_uploaded_file($_FILES['data']['tmp_name'],  $uploadDir  .  $_FILES['data']['name'])  or  die("Cannot  copy  uploaded  file"); //  display  success  message
+
+echo  "File  successfully  uploaded  to INTIMA Database "; } ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +45,7 @@ include ("auth.php");
     <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon.png">
     <link rel="icon" type="image/png" href="./images/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
+    <title>INTIMA Upload Page</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -37,7 +72,7 @@ include ("auth.php");
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.html">
+                        <a class="nav-link" href="dashboard.php">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -109,8 +144,10 @@ include ("auth.php");
                                 <div class="card-body ">
                                     <div class="table-full-width">
                                       <div class="">
+                        <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
                                         <button class="btn">
-                                            <input type="file" />
+                                            <input type="file" name="data" />
                                           </button>
                                         </div>
                                     </div>
@@ -129,9 +166,12 @@ include ("auth.php");
                                     <div class="table-full-width">
                                     <br>
                                      <div class="container-login100-form-btn m-t-17">
-                                        <input name="submitfile" type="submit"  class="login100-form-btn"/>
+                                        <input name="submit" type="submit"  class="login100-form-btn"/>
                                     </div>
                                     </div>
+                                     </form>   
+                                    </div>
+                                
                                 </div>
                                 <div class="card-footer ">
                                     <hr>
