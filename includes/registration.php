@@ -12,7 +12,7 @@ if (isset($_REQUEST['username'])){
 	$password = mysqli_real_escape_string($con,$password);
     $checkquery = "SELECT * FROM `users` WHERE username = 'username'";
     $checkresult = mysqli_query ($con, $checkquery);
-    echo $checkresult;
+   
     if (!checkresult){
         $query = "INSERT into `users` (username, password, email)
 VALUES ('$username', '".md5($password)."', '$email')";
