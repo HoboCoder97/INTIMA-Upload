@@ -10,11 +10,8 @@ if (isset($_REQUEST['username'])){
 	$email = mysqli_real_escape_string($con,$email);
 	$password = stripslashes($_REQUEST['password']);
 	$password = mysqli_real_escape_string($con,$password);
-    $checkquery = "SELECT * FROM `users` WHERE username = 'username'";
-    $checkresult = mysqli_query ($con, $checkquery);
    
-    if (!checkresult){
-        $query = "INSERT into `users` (username, password, email)
+    $query = "INSERT into `users` (username, password, email)
 VALUES ('$username', '".md5($password)."', '$email')";
         $result = mysqli_query($con,$query);
      
@@ -26,10 +23,6 @@ VALUES ('$username', '".md5($password)."', '$email')";
         }
     else{
             }
-    }
-    else {
-    echo "<script type='text/javascript'>alert('Username taken');</script>";
-}
 
 }
 
