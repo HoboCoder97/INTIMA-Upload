@@ -92,7 +92,7 @@ echo  "File  successfully  uploaded  to INTIMA Database "; } ?>
                     </li>
                    
                     <li>
-                        <a class="nav-link" href="contact.php">
+                        <a class="nav-link" href="contactadmin.hhtml">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Contact Admin</p>
                         </a>
