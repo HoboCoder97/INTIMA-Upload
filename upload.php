@@ -1,7 +1,7 @@
 <?php
 include ("auth.php");
  //  display  file  upload  form
-
+date_default_timezone_set('Singapore');
 if  (!isset($_POST['submit']))  { ?>
 
 
@@ -13,7 +13,7 @@ if  (!isset($_POST['submit']))  { ?>
 
 if  ($_FILES['data']['size']  ==  0)  {
 
-die("ERROR:  Zero  byte  file  upload");
+echo  "File  type not permitted ";
 
 }
 
@@ -25,17 +25,25 @@ if  (!in_array($_FILES['data']['type'],  $allowedFileTypes)) {
 
 die("ERROR:  File  type  not  permitted");
 
-} //  check  if  this  is  a  valid  upload
+}//  check  if  this  is  a  valid  upload
+$selected_val = $_POST['option'];  // Storing Selected Value In Variable
+if ($selected_val == "ap")
+    $uploadDir  =  "./uploads/incomplete/activityproposal/"; //  copy  the  uploaded  file  to  the  directory
+else if ($selected_val == "pp")
+    $uploadDir  =  "./uploads/incomplete/projectproposal/"; //  copy  the  uploaded  file  to  the  directory
+else if ($selected_val== "pmp")
+    $uploadDir  =  "./uploads/incomplete/postmortem/"; //  copy  the  uploaded  file  to  the  directory
 
 if  (!is_uploaded_file($_FILES['data']['tmp_name']))   {
 
 die("ERROR:  Not  a  valid  file  upload"); } //  set  the  name  of  the  target  directory
 
-$uploadDir  =  "./uploads/incomplete/"; //  copy  the  uploaded  file  to  the  directory
+
 
 move_uploaded_file($_FILES['data']['tmp_name'],  $uploadDir  .  $_FILES['data']['name'])  or  die("Cannot  copy  uploaded  file"); //  display  success  message
 
-echo  "File  successfully  uploaded  to INTIMA Database "; } ?>
+echo  "File  successfully  uploaded  to INTIMA Database "; 
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -156,9 +164,9 @@ echo  "File  successfully  uploaded  to INTIMA Database "; } ?>
                                     Please Select Type of File to Upload
                                     <br>
                                         <div class="upload-btn-wrapper">
-                                        <select type="option">
-                                            <option value="pmp">Post Mortem Report</option>
+                                        <select type="option" name="option">
                                             <option value="ap">Activity Proposal</option>
+                                            <option value="pmp">Post Mortem Report</option>
                                             <option value="pp">Project Proposal</option>
                                         </select>
                                         </div>
