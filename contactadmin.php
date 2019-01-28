@@ -126,7 +126,7 @@ include ("auth.php");
                                                             <div class="card-body">
                                                              <h4 class="card-title">Danson Ng</h4>
                                                              <p class="card-text">I'm your dai lou, come pm me</p>
-                                                            <a href="https://goo.gl/bzb4PB" class="btn btn-primary">Email</a>
+                                                            <a href="https://goo.gl/zurmKH" class="btn btn-primary">Email</a>
                                                             </div>
                                                         </div>
                                                 </tr>
