@@ -1,9 +1,10 @@
-<?php 
+<?php
 session_start();
-include ("./includes/upload.php");
+include ("auth.php");
 
-?> 
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,7 @@ include ("./includes/upload.php");
     <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon.png">
     <link rel="icon" type="image/png" href="./images/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>INTIMA Upload Page</title>
+    <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -39,7 +40,7 @@ include ("./includes/upload.php");
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.php">
+                        <a class="nav-link" href="dashboard.html">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -97,59 +98,7 @@ include ("./includes/upload.php");
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    
-                    <div class="row">
-                        
-                        <div class="col-md-12">
-                            <div class="card  card-tasks">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Upload</h4>
-                                    <p class="card-category"></p>
-                                </div>
-                                <div class="card-body ">
-                                    <div class="table-full-width">
-                                      <div class="">
-                        <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-                            
-                        <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
-                                        <button class="btn">
-                                            <input type="file" name="data" />
-                                          </button>
-                                        </div>
-                                    </div>
-                                    <div class="table-full-width">
-                                    <br>
-                                    Please Select Type of File to Upload
-                                    <br>
-                                        <div class="upload-btn-wrapper">
-                                        <select type="option" name="option">
-                                            <option value="ap">Activity Proposal</option>
-                                            <option value="pmp">Post Mortem Report</option>
-                                            <option value="pp">Project Proposal</option>
-                                        </select>
-                                        </div>
-                                    </div>
-                                    <div class="table-full-width">
-                                    <br>
-                                     <div class="container-login100-form-btn m-t-17">
-                                        <input name="submit" type="submit"  class="login100-form-btn"/>
-                                    </div>
-                                    </div>
-                                     </form>   
-                                    </div>
-                                
-                                </div>
-                                <div class="card-footer ">
-                                    <hr>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <footer class="footer">
                 <div class="container">
                     <nav>
