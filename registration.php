@@ -53,7 +53,8 @@
     <div class="container-login100-form-btn m-t-17">
         <input name="submit" type="submit" value="Register" class="login100-form-btn"/>
     </div>
-    <p> <a href='index.php'>Back to Login</a></p>
+    <hr>
+    <pre> <a href='index.php'>Back to Login</a></pre>
 </form>
 </div>
 

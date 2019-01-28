@@ -55,7 +55,8 @@ include ("./includes/index.php");
                     <input name="submit" type="submit" value="Login" class="login100-form-btn"/>
             </div>
         </form>
-<p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+<hr>
+<pre>Not registered yet? <a href='registration.php'>Register Here</a></pre>
 </div>
 
             </div>
