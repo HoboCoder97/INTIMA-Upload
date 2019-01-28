@@ -57,7 +57,7 @@ include ("auth.php");
                     </li>
                    
                     <li>
-                        <a class="nav-link" href="contact.php">
+                        <a class="nav-link" href="contactadmin.html">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Contact Admin</p>
                         </a>
