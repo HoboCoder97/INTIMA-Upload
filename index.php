@@ -3,6 +3,7 @@ require('db.php');
 session_start();
 // If form submitted, insert values into the database.
 include ("./includes/index.php");
+
 ?>
 <!DOCTYPE html>
 <html>

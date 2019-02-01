@@ -1,8 +1,8 @@
-<?php 
-session_start();
+<?php
+
 include ("./includes/upload.php");
 
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@ include ("./includes/upload.php");
                     </li>
                    
                     <li>
-                        <a class="nav-link" href="contactadmin.hhtml">
+                        <a class="nav-link" href="contactadmin.php">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Contact Admin</p>
                         </a>
@@ -72,7 +72,7 @@ include ("./includes/upload.php");
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class=" container-fluid  ">
-                    <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                    <a class="navbar-brand" href="dashboard.php"> Dashboard </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -110,16 +110,16 @@ include ("./includes/upload.php");
                                 </div>
                                 <div class="card-body ">
                                     <div class="table-full-width">
-                                      <div class="">
-                        <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+
+                        <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             
                         <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
-                                        <button class="btn">
+
                                             <input type="file" name="data" />
-                                          </button>
-                                        </div>
-                                    </div>
-                                    <div class="table-full-width">
+
+
+
+                                        <div class="table-full-width">
                                     <br>
                                     Please Select Type of File to Upload
                                     <br>
@@ -136,8 +136,8 @@ include ("./includes/upload.php");
                                      <div class="container-login100-form-btn m-t-17">
                                         <input name="submit" type="submit"  class="login100-form-btn"/>
                                     </div>
-                                    </div>
-                                     </form>   
+                                            </div>
+                                </form>
                                     </div>
                                 
                                 </div>
@@ -165,7 +165,7 @@ include ("./includes/upload.php");
                 </div>
             </footer>
         </div>
-    </div>
+
     <!--   -->
     <!-- <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
@@ -272,3 +272,4 @@ include ("./includes/upload.php");
 </script>
 
 </html>
+
